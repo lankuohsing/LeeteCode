@@ -71,6 +71,7 @@
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="makeEmpty.h" />
     <ClInclude Include="Output.h" />
+    <ClInclude Include="Solution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

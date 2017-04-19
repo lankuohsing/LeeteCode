@@ -1,4 +1,3 @@
-#pragma once
 #include<iostream>
 #include"ListNode.h"
 using namespace std;
@@ -13,7 +12,7 @@ public:
 		{
 			return;
 		}
-		first = new ListNode ( val );
+		first->val = val;
 		cin >> val; last = first;
 		while ( val != endTag )
 		{
