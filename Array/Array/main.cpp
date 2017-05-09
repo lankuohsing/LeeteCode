@@ -20,7 +20,7 @@ int main ( )
 	Solution solution;
 	//vector<int>result;
 	//数组初始化vector
-	int nums0 [ ] = { 4, 3, 2, 7, 8, 2, 3, 1 };
+	int nums0 [ ] = { 1,2,3,2 };
 	size_t count = sizeof( nums0 ) / sizeof( int );
 	
 	vector<int>nums ( nums0, nums0 + count );
@@ -41,8 +41,12 @@ int main ( )
 	cout << solution.removeDuplicates ( nums ) << endl;
 	print_collection ( nums );
 	*/
+	/*
 	nums = solution.findDuplicates ( nums );
 	print_collection ( nums );
+	*/
+	//561. Array Partition I
+	cout << solution.arrayPairSum ( nums )<<endl;
 	system ( "pause" );
 	return 0;
 

@@ -89,4 +89,40 @@ public:
 		
 		return nums1;
 	}
+	int arrayPairSum ( vector<int>& nums ) {
+		int hashTable [ 20001 ] = { 0 };
+		int result = 0;
+		int flag = 0;
+		for ( size_t i = 0; i < nums.size(); i++ )
+		{
+			hashTable [ nums [ i ] + 10000 ]++;
+
+		}
+		for ( size_t i = 0; i < 20001;  )
+		{
+			if ( hashTable [ i ]>0 && flag == 0 )
+			{
+				result += i - 10000;
+				flag = 1;
+				hashTable [ i ]--;
+			}
+			else
+			{
+				if ( hashTable [ i ]>0 && flag == 1 )
+				{
+					hashTable [ i ]--;
+					flag = 0;
+				}
+				else
+				{
+					i++;
+				}
+			}
+			
+			
+
+		}
+
+		return result;
+	}
 };
