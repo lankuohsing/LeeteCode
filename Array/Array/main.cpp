@@ -20,7 +20,7 @@ int main ( )
 	Solution solution;
 	//vector<int>result;
 	//数组初始化vector
-	int nums0 [ ] = { 1,2,3,2 };
+	int nums0 [ ] = { 1, 2, 3, 4 };
 	size_t count = sizeof( nums0 ) / sizeof( int );
 	
 	vector<int>nums ( nums0, nums0 + count );
@@ -41,12 +41,17 @@ int main ( )
 	cout << solution.removeDuplicates ( nums ) << endl;
 	print_collection ( nums );
 	*/
+	//442. Find All Duplicates in an Array
 	/*
 	nums = solution.findDuplicates ( nums );
 	print_collection ( nums );
 	*/
+	/*
 	//561. Array Partition I
-	cout << solution.arrayPairSum ( nums )<<endl;
+	print_collection ( solution.findDisappearedNumbers2(nums) );
+	*/
+	//238. Product of Array Except Self
+	print_collection ( solution.productExceptSelf ( nums ) );
 	system ( "pause" );
 	return 0;
 

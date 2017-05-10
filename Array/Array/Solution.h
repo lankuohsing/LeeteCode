@@ -125,4 +125,61 @@ public:
 
 		return result;
 	}
+	vector<int> findDisappearedNumbers1 ( vector<int>& nums ) {
+		vector<int> result;
+		for ( size_t i = 0; i < nums.size(); i++ )
+		{
+			int m = abs(nums [ i ]) - 1;
+			nums [ m ] = -abs(nums [ m ]);
+
+		}
+		for ( size_t i = 0; i < nums.size ( ); i++ )
+		{
+			if ( nums [ i ]>0 ) result.push_back ( i + 1 );
+		}
+		return result;
+	}
+	vector<int> findDisappearedNumbers2 ( vector<int>& nums ) {
+		vector<int> temp(nums.size(),0);
+		for ( size_t i = 0; i < nums.size ( ); i++ )
+		{
+			temp[nums[i]-1]++;
+
+		}
+		int j = 0;
+		for ( size_t i = 0; i < temp.size ( ); i++ )
+		{
+			if ( temp [ i ] == 0 )
+			{
+				nums [ j ] = i + 1;
+				j++;
+			}
+		}
+		for ( size_t i = j; i < temp.size(); i++ )
+		{
+			nums.pop_back ( );
+
+		}
+		return nums;
+	}
+	vector<int> productExceptSelf ( vector<int>& nums ) {
+		vector<int> arrayFirst ( nums.size ( ) );
+		vector<int> arrayLast ( nums.size ( ) );
+		vector<int> result ( nums.size ( ) );
+		int length = nums.size ( );
+		arrayFirst [ 0 ] = 1;
+		arrayLast [ 0 ] = 1;
+		for ( size_t i = 1; i < length; i++ )
+		{
+			arrayFirst [ i ] = arrayFirst [ i - 1 ] * nums [ i - 1 ];
+			arrayLast [ i ] = arrayLast [ i - 1 ] * nums [ length - i ];
+
+
+		}
+		for ( size_t i = 0; i < length ; i++ )
+		{
+			result [ i ] = arrayFirst [ i ] * arrayLast [ length - i - 1 ];
+		}
+		return result;
+	}
 };
