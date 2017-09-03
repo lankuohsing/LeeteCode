@@ -22,14 +22,16 @@ int main ( )
 	Solution two_sum;
 	vector<int>result;
 	//数组初始化vector
-	int nums0 [ ] = { 2, 7, 11, 15 };
+	int nums0 [ ] = { 3,3 };
 	size_t count = sizeof( nums0 ) / sizeof( int );
 	vector<int>nums ( nums0, nums0 + count );
-	int target = 9;
-	result = two_sum.twoSum ( nums, target );
+	int target = 6;
+	result = two_sum.twoSum1 ( nums, target );
 	cout << "vector data: " << endl;
 	print_collection ( result );
 	
+
+
 	system ( "pause" );
 	return 0;
 
